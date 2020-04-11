@@ -18,18 +18,14 @@ function ReadSheetAndCreateForm() {
    var form = FormApp.create(item)  
        .setTitle(item)
        .setDescription('Be Safe.  Stay Healthy!')
+       .setCollectEmail(true)
        .setConfirmationMessage('An order summary has been sent to your email address for your record.  Thank you for shopping at your local farmers market.')
        .setProgressBar(true)
       
-   var img = DriveApp.getFileById('164mGC-jEqD3Dx1l166AvIYf_X_16zZBd');
+   var img = DriveApp.getFileById('13o2pAUJogA9NBItao9oTPYhRfMpA806l');
    form.addImageItem()
        .setImage(img);
   
-   item = "Email address";  
-   form.addTextItem()  
-       .setTitle(item)  
-       .setRequired(true);  
-   
    item = "Customer's First Name";  
    form.addTextItem()  
        .setTitle(item)  
