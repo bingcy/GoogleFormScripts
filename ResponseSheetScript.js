@@ -20,14 +20,14 @@ function stopAcceptingFormResponses(e){
   var sheet = SpreadsheetApp.getActiveSheet();
   var range = sheet.getDataRange();
   var numRows = range.getNumRows();
-  Logger.log('Number of rows : ' + numRows);
-  sendDebugMsgEmail('Number of rows : ' + numRows);
+  //Logger.log('Number of rows : ' + numRows);
+  //sendDebugMsgEmail('Number of rows : ' + numRows);
   
   if (numRows > MAX_ORDERS) {
-    var msg = 'Maximum number of orders for this week has been reached. Thank you and please try it next week.';
+    var msg = 'Maximum number of orders has been reached for this week. Thank you and please try it next week.';
     var formId = getFormId();
     var form = FormApp.openById(formId);
-    sendDebugMsgEmail(msg);
+    //sendDebugMsgEmail(msg);
     form.setAcceptingResponses(false).setCustomClosedFormMessage(msg);
   }
 }
